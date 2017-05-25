@@ -15,7 +15,8 @@ def word_count
    text_array = words.split(/[\s,.]+/)
 
    text_array.each do |x| 
-      if system("look #{x} > /dev/null 2>&1") 
+      if system("look #{x} > /dev/null 2>&1")
+         x = x.downcase
          #puts "#{x} is a word"
          if !word_hash.has_key?("#{x}") 
             word_hash["#{x}"] = 0
